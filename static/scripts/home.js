@@ -6,7 +6,9 @@ try {
     inFrame = true
 }
 
-// Cloaking Code
+// Cloaking Code - DISABLED
+// Uncomment the code below to enable cloaking (will redirect to NASA)
+/*
 if (!inFrame && !navigator.userAgent.includes("Firefox")) {
     const popup = open("about:blank", "_blank")
     if (!popup || popup.closed) {
@@ -35,6 +37,7 @@ if (!inFrame && !navigator.userAgent.includes("Firefox")) {
         location.replace("https://www.nasa.gov/")
     }
 }
+*/
 
 document.addEventListener("DOMContentLoaded", function(event) { 
     if(window.localStorage.getItem("v4Particles") == "true") {
