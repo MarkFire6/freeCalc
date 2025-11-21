@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 5000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
-app.use(express.static(path.join(__dirname, 'static')));
+app.use(express.static(__dirname));
 
 const routes = [
   { path: '/', file: 'index.html' },
@@ -45,7 +45,7 @@ app.get('/edu/*', cors({ origin: false }), async (req, res, next) => {
 
 routes.forEach((route) => {
   app.get(route.path, (req, res) => {
-    res.sendFile(path.join(__dirname, 'static', route.file));
+    res.sendFile(path.join(__dirname, route.file));
   });
 });
 
